@@ -60,7 +60,7 @@
             </div>
             <div class="ops-route">
               <span><i class="bi bi-diagram-3 me-1"></i>Ingress route</span>
-              <code>/api/* → fastapi-service:8000</code>
+              <code>/api/* → backend-service:8000</code>
             </div>
           </div>
         </div>
@@ -211,7 +211,7 @@
     <div class="container">
       <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
         <span><i class="bi bi-book-half me-1"></i> Cloud Bookstore</span>
-        <span>Vue 3 · FastAPI · PostgreSQL · Redis · Minikube</span>
+        <span>Vue 3 · FastAPI · PostgreSQL · Redis · Kubernetes</span>
       </div>
     </div>
   </footer>

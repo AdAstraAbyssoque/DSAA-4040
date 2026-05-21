@@ -4,3 +4,7 @@ __pycache__
 *.pyc
 .env
 .env.*
+bookstore/frontend/dist/
+.tools/
+deliverables/tmp/
+deliverables/report/

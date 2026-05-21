@@ -1,0 +1,1 @@
+{"status":"ok","stack":{"frontend":"Vue 3 + Nginx","backend":"FastAPI","database":"PostgreSQL","cache":"Redis"},"redis":"ok"}

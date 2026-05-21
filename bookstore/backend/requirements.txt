@@ -1,5 +1,5 @@
-fastapi
-uvicorn[standard]
-SQLAlchemy
-psycopg2-binary
-redis
+fastapi==0.115.14
+uvicorn[standard]==0.34.3
+SQLAlchemy==2.0.41
+psycopg2-binary==2.9.10
+redis==5.2.1
