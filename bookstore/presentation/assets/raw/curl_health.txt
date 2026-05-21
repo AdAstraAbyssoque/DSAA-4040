@@ -1,0 +1,14 @@
+{
+    "status": "ok",
+    "stack": {
+        "frontend": "Vue 3 + Nginx",
+        "backend": "FastAPI",
+        "database": "PostgreSQL",
+        "cache": "Redis"
+    },
+    "redis": "ok"
+}
+
+real	0m0.026s
+user	0m0.018s
+sys	0m0.013s
