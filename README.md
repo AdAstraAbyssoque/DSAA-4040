@@ -87,24 +87,17 @@ Verified K3s endpoints from the final run:
 - NodePort frontend/API: `http://localhost:30080`
 - Traefik Ingress: `http://localhost:18081`
 
-## Verification Evidence
+## Submission Artifacts
 
-Evidence is kept under `deliverables/evidence/`.
-
-| Evidence | File |
+| Artifact | File |
 | --- | --- |
-| Compose API end-to-end flow | `deliverables/evidence/compose/compose_api_e2e.txt` |
-| K8s API end-to-end flow | `deliverables/evidence/k8s/k8s_api_e2e_corrected.txt` |
-| K8s objects, Ingress, HPA | `deliverables/evidence/k8s/bookstore_all_ingress_hpa.txt` |
-| HPA metrics resolved | `deliverables/evidence/k8s/bookstore_hpa.txt` |
-| HPA load test: 2 -> 8 backend replicas | `deliverables/evidence/hpa/hpa_result_summary.md` |
-| K3s runtime after HPA test | `deliverables/evidence/k8s/bookstore_runtime_after_hpa.txt` |
-| Pod recovery and PVC persistence | `deliverables/evidence/k8s/k8s_recovery_persistence_final.txt` |
-| Smoke test and PostgreSQL order query | `deliverables/evidence/k8s/smoke_test_k8s_nodeport.txt`, `deliverables/evidence/k8s/postgres_orders_after_smoke.txt` |
-| Redis cache keys and TTL | `deliverables/evidence/k8s/redis_cache_evidence.txt` |
-| Clean UI screenshots | `deliverables/evidence/screenshots/` |
+| Final report | `deliverables/report/final_report.pdf` |
+| Progress presentation slides | `bookstore/presentation/progress_presentation_en.pptx` |
 | Final demo video with burned-in subtitles | `deliverables/video/DSAA4040_E1_bookstore_demo_subtitled.mp4` |
-| Short evidence-cut video | `deliverables/video/final_demo.mp4` |
+| Supporting experiment summary | `deliverables/evidence/hpa/hpa_result_summary.md` |
+| Supporting PostgreSQL exports | `deliverables/evidence/db/` |
+| Supporting Redis check | `deliverables/evidence/k8s/redis_cache_evidence.txt` |
+| Supporting figures | `deliverables/evidence/visualizations/` |
 
 Validation summary:
 
@@ -147,14 +140,15 @@ bookstore/
   backend/                 FastAPI application and Dockerfile
   frontend/                Vue SPA, Nginx config, Dockerfile
   k8s/                     Kubernetes manifests
+  presentation/            Progress presentation PPTX
   scripts/                 Smoke test and HPA load-test scripts
   docker-compose.yaml      Local four-service deployment
   deploy.sh                Minikube/K3s/Kubectl deployment script
 
 deliverables/
-  evidence/                Command outputs and UI screenshots
+  report/final_report.pdf  Final project report
+  evidence/                Small set of final experiment summaries and figures
   video/DSAA4040_E1_bookstore_demo_subtitled.mp4 final demo video
-  video/final_demo.mp4 short evidence-cut video
 ```
 
 ## Tool Usage Disclosure

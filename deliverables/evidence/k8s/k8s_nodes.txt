@@ -1,2 +1,0 @@
-NAME                  STATUS   ROLES                  AGE     VERSION        INTERNAL-IP   EXTERNAL-IP   OS-IMAGE           KERNEL-VERSION     CONTAINER-RUNTIME
-dsaa4040-k3s-server   Ready    control-plane,master   9m12s   v1.31.5+k3s1   172.25.0.2    <none>        K3s v1.31.5+k3s1   6.8.0-64-generic   containerd://1.7.23-k3s2

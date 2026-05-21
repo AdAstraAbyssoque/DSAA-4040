@@ -123,7 +123,7 @@ Observed result:
 | 17:09:12 | `231%/60%` | 8 | load distributed across backend Pods |
 | 17:12:16 | `2%/60%` | 8 | load ended; downscale delay observed |
 
-The strongest evidence is in `deliverables/evidence/hpa/hpa_watch.txt`, `pod_watch.txt`, and `top_watch.txt`. During the load, `kubectl top pods` showed backend Pods rising from a few millicores to hundreds of millicores of CPU. After HPA added replicas, the backend workload was spread across eight Pods. This demonstrates the complete cloud-native loop:
+During the load, `kubectl top pods` showed backend Pods rising from a few millicores to hundreds of millicores of CPU. After HPA added replicas, the backend workload was spread across eight Pods. The final repository keeps a compact HPA summary and figures rather than the full raw watch logs. This demonstrates the complete cloud-native loop:
 
 ```text
 metrics-server collects CPU
@@ -135,12 +135,10 @@ metrics-server collects CPU
 
 The experiment also showed a practical Kubernetes behavior: when the load stopped, CPU dropped quickly, but replicas did not immediately return to 2. This is expected because HPA downscaling is intentionally conservative to avoid oscillation.
 
-For readability and auditability, the raw watch logs were converted into two CSV datasets and matplotlib figures:
+For readability and auditability, the raw watch logs were converted into matplotlib figures:
 
-- `deliverables/evidence/visualizations/hpa_timeseries.csv`
-- `deliverables/evidence/visualizations/backend_cpu_timeseries.csv`
-- `deliverables/evidence/visualizations/hpa_autoscaling_timeseries.png` / `.pdf`
-- `deliverables/evidence/visualizations/backend_cpu_timeseries.png` / `.pdf`
+- `deliverables/evidence/visualizations/hpa_autoscaling_timeseries.png`
+- `deliverables/evidence/visualizations/backend_cpu_timeseries.png`
 
 These charts make the scaling result easier to audit: the HPA chart shows the replica count changing from 2 to 4 and then 8, while the CPU chart shows backend CPU pressure rising during the load period and then returning to idle.
 
@@ -192,7 +190,7 @@ The smoke test also confirmed the application workflow through Kubernetes: healt
 
 ## 6. Demo Video
 
-The main demo video is stored at `deliverables/video/DSAA4040_E1_bookstore_demo_subtitled.mp4`. It is a screen-recorded walkthrough with burned-in subtitles, based on the Kubernetes NodePort deployment and verified command outputs. A shorter evidence-cut video is also included at `deliverables/video/final_demo.mp4`. The demo covers:
+The main demo video is stored at `deliverables/video/DSAA4040_E1_bookstore_demo_subtitled.mp4`. It is a screen-recorded walkthrough with burned-in subtitles, based on the Kubernetes NodePort deployment and verified command outputs. The demo covers:
 
 - UI workflow: browse, cart, checkout, order history.
 - PostgreSQL order evidence from `psql`.

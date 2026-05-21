@@ -1,3 +1,0 @@
-NAME           REFERENCE             TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
-backend-hpa    Deployment/backend    cpu: 3%/60%   2         8         2          57s
-frontend-hpa   Deployment/frontend   cpu: 1%/70%   2         4         2          57s

@@ -1,8 +1,0 @@
-NAME                                      READY   STATUS      RESTARTS   AGE     IP          NODE                  NOMINATED NODE   READINESS GATES
-coredns-ccb96694c-48dml                   1/1     Running     0          9m6s    10.42.0.3   dsaa4040-k3s-server   <none>           <none>
-helm-install-traefik-crd-jkrnb            0/1     Completed   0          9m7s    10.42.0.5   dsaa4040-k3s-server   <none>           <none>
-helm-install-traefik-nzplw                0/1     Completed   1          9m7s    10.42.0.6   dsaa4040-k3s-server   <none>           <none>
-local-path-provisioner-5cf85fd84d-dm4j4   1/1     Running     0          9m6s    10.42.0.2   dsaa4040-k3s-server   <none>           <none>
-metrics-server-5985cbc9d7-wvhqx           1/1     Running     0          9m6s    10.42.0.4   dsaa4040-k3s-server   <none>           <none>
-svclb-traefik-1cf11f5d-lxghb              2/2     Running     0          8m22s   10.42.0.7   dsaa4040-k3s-server   <none>           <none>
-traefik-5d45fc8cc9-dpcv9                  1/1     Running     0          8m22s   10.42.0.8   dsaa4040-k3s-server   <none>           <none>

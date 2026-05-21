@@ -1,8 +1,0 @@
-NAME                       TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE   SELECTOR
-service/backend-service    ClusterIP   10.43.83.251   <none>        8000/TCP       58s   app=backend
-service/frontend-service   NodePort    10.43.99.156   <none>        80:30080/TCP   58s   app=frontend
-service/postgres-service   ClusterIP   None           <none>        5432/TCP       99s   app=postgres
-service/redis-service      ClusterIP   10.43.12.161   <none>        6379/TCP       98s   app=redis
-
-NAME                                          CLASS     HOSTS   ADDRESS      PORTS   AGE
-ingress.networking.k8s.io/bookstore-ingress   traefik   *       172.25.0.2   80      58s

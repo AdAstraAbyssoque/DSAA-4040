@@ -1,7 +1,0 @@
-NAME                        READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
-backend-6cdccb76d-624qk     1/1     Running   0          70s     10.42.0.17   dsaa4040-k3s-server   <none>           <none>
-backend-6cdccb76d-mmbpk     1/1     Running   0          2m26s   10.42.0.13   dsaa4040-k3s-server   <none>           <none>
-frontend-59dfc97bb6-b98t6   1/1     Running   0          70s     10.42.0.16   dsaa4040-k3s-server   <none>           <none>
-frontend-59dfc97bb6-w4fzm   1/1     Running   0          2m26s   10.42.0.14   dsaa4040-k3s-server   <none>           <none>
-postgres-7f4d649474-9bqk8   1/1     Running   0          25s     10.42.0.19   dsaa4040-k3s-server   <none>           <none>
-redis-85df57c7c8-2v7gq      1/1     Running   0          3m6s    10.42.0.10   dsaa4040-k3s-server   <none>           <none>
