@@ -1,0 +1,9 @@
+ id |    session_id    | total_price |  status   |         created_at         
+----+------------------+-------------+-----------+----------------------------
+  6 | smoke-1779383204 |       59.99 | confirmed | 2026-05-21 17:06:44.211361
+  5 | sess_rmf0t33fxy  |       59.99 | confirmed | 2026-05-21 16:46:19.731164
+  4 | sess_1khtb4emeb  |       59.99 | confirmed | 2026-05-21 16:44:10.245375
+  3 | sess_dya8ztsb7l  |       59.99 | confirmed | 2026-05-21 16:38:29.358275
+  2 | sess_dya8ztsb7l  |       59.99 | confirmed | 2026-05-21 16:28:22.228628
+(5 rows)
+

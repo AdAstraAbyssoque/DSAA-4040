@@ -1,0 +1,18 @@
+Redis cache evidence after catalog API requests
+Generated at: 2026-05-21T17:54:06Z
+
+$ kubectl get pod -l app=redis -n bookstore
+NAME                     READY   STATUS    RESTARTS   AGE   IP           NODE                  NOMINATED NODE   READINESS GATES
+redis-85df57c7c8-2v7gq   1/1     Running   0          94m   10.42.0.10   dsaa4040-k3s-server   <none>           <none>
+
+$ redis-cli keys 'catalog:*'
+catalog:categories
+catalog:books:q=:category=Cloud Computing
+
+$ redis-cli ttl / strlen for each catalog key
+key=catalog:categories
+ttl=6
+strlen=77
+key=catalog:books:q=:category=Cloud Computing
+ttl=6
+strlen=919

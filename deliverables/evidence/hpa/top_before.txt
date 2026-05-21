@@ -1,0 +1,7 @@
+NAME                        CPU(cores)   MEMORY(bytes)   
+backend-6ddfb9c4d-smpdj     2m           54Mi            
+backend-6ddfb9c4d-tnpl2     3m           55Mi            
+frontend-8cf9b685d-4zhjr    1m           4Mi             
+frontend-8cf9b685d-cfzsp    1m           4Mi             
+postgres-7f4d649474-9bqk8   2m           27Mi            
+redis-85df57c7c8-2v7gq      4m           3Mi             

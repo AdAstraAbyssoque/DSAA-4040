@@ -1,0 +1,10 @@
+=== Bookstore Smoke Test ===
+Base URL: http://localhost:30080
+Session:  smoke-1779383204
+[1/6] Health check
+{"status":"ok","stack":{"frontend":"Vue 3 + Nginx","backend":"FastAPI","database":"PostgreSQL","cache":"Redis"},"redis":"ok"}[2/6] List books
+[3/6] Add item to cart
+{"message":"Added to cart"}[4/6] Read cart
+[5/6] Place order
+{"id":6,"session_id":"smoke-1779383204","total_price":59.99,"status":"confirmed","created_at":"2026-05-21T17:06:44.211361","items":[{"id":7,"book_id":1,"quantity":1,"price":59.99,"book_title":"Cloud Computing: Concepts, Technology & Architecture"}]}[6/6] Query orders
+Smoke test passed.

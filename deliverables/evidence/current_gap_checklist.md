@@ -7,6 +7,7 @@ Final status after the recovery pass:
 - Kubernetes has been run on a local K3s cluster with Traefik enabled.
 - NodePort and Traefik Ingress access were both verified.
 - ConfigMap, Secret, PVC, Deployment, Service, Ingress, probes, resource limits, and HPA were verified.
+- HPA autoscaling was tested with a controlled in-cluster CPU load and backend scaled from 2 replicas to 8 replicas.
 - Frontend and backend Pod recovery were tested by deleting Pods and waiting for Deployment recovery.
 - PostgreSQL PVC persistence was tested by creating an order, restarting the PostgreSQL Pod, and reading the order afterward.
 - Final report PDF is kept as a local review copy at `deliverables/report/final_report.pdf` and is intentionally not pushed before review.
@@ -15,5 +16,5 @@ Final status after the recovery pass:
 Residual limitations:
 
 1. PostgreSQL is single-Pod local storage, so database restart is not zero-downtime.
-2. HPA is configured and receiving metrics, but no long sustained load test is included.
+2. HPA load testing used a diagnostics CPU endpoint, not real user browsing traffic.
 3. The demo video is an edited screen/evidence walkthrough, not a live narrated screen recording.

@@ -1,0 +1,13 @@
+NAME                        READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2     1/1     Running   0          6m      10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt     1/1     Running   0          6m      10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4     1/1     Running   0          5m45s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws     1/1     Running   0          5m45s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj     1/1     Running   0          7m22s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2     1/1     Running   0          7m37s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h     1/1     Running   0          5m45s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p     1/1     Running   0          5m45s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+frontend-8cf9b685d-4zhjr    1/1     Running   0          7m31s   10.42.0.28   dsaa4040-k3s-server   <none>           <none>
+frontend-8cf9b685d-cfzsp    1/1     Running   0          7m37s   10.42.0.27   dsaa4040-k3s-server   <none>           <none>
+postgres-7f4d649474-9bqk8   1/1     Running   0          51m     10.42.0.19   dsaa4040-k3s-server   <none>           <none>
+redis-85df57c7c8-2v7gq      1/1     Running   0          54m     10.42.0.10   dsaa4040-k3s-server   <none>           <none>

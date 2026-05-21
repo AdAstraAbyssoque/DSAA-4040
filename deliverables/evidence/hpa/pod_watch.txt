@@ -1,0 +1,242 @@
+2026-05-21T17:07:10Z
+NAME                      READY   STATUS    RESTARTS   AGE   IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-smpdj   1/1     Running   0          45s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          60s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:07:25Z
+NAME                      READY   STATUS    RESTARTS   AGE   IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-smpdj   1/1     Running   0          60s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          75s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:07:40Z
+NAME                      READY   STATUS    RESTARTS   AGE   IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-smpdj   1/1     Running   0          75s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          90s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:07:56Z
+NAME                      READY   STATUS    RESTARTS   AGE    IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   0/1     Running   0          9s     10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   0/1     Running   0          9s     10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          91s    10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          106s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:08:11Z
+NAME                      READY   STATUS    RESTARTS   AGE    IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          24s    10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          24s    10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   0/1     Running   0          9s     10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   0/1     Running   0          9s     10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          106s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          2m1s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   0/1     Running   0          9s     10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   0/1     Running   0          9s     10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:08:26Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          39s     10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          39s     10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          24s     10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          24s     10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          2m1s    10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          2m16s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          24s     10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          24s     10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:08:42Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          55s     10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          55s     10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          40s     10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          40s     10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          2m17s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          2m32s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          40s     10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          40s     10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:08:57Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          70s     10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          70s     10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          55s     10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          55s     10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          2m32s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          2m47s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          55s     10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          55s     10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:09:12Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          85s     10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          85s     10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          70s     10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          70s     10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          2m47s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          3m2s    10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          70s     10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          70s     10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:09:27Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          101s    10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          101s    10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          86s     10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          86s     10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          3m3s    10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          3m18s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          86s     10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          86s     10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:09:43Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          116s    10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          116s    10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          101s    10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          101s    10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          3m18s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          3m33s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          101s    10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          101s    10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:09:58Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          2m11s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          2m11s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          116s    10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          116s    10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          3m33s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          3m48s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          116s    10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          116s    10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:10:13Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          2m27s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          2m27s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          2m12s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          2m12s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          3m49s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          4m4s    10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          2m12s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          2m12s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:10:29Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          2m42s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          2m42s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          2m27s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          2m27s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          4m4s    10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          4m19s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          2m27s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          2m27s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:10:44Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          2m57s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          2m57s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          2m42s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          2m42s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          4m19s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          4m34s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          2m42s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          2m42s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:10:59Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          3m12s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          3m12s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          2m57s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          2m57s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          4m34s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          4m49s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          2m57s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          2m57s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:11:15Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          3m28s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          3m28s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          3m13s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          3m13s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          4m50s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          5m5s    10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          3m13s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          3m13s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:11:30Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          3m43s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          3m43s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          3m28s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          3m28s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          5m5s    10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          5m20s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          3m28s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          3m28s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:11:45Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          3m58s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          3m58s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          3m43s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          3m43s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          5m20s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          5m35s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          3m43s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          3m43s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:12:00Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          4m14s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          4m14s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          3m59s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          3m59s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          5m36s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          5m51s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          3m59s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          3m59s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:12:16Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          4m29s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          4m29s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          4m14s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          4m14s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          5m51s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          6m6s    10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          4m14s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          4m14s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:12:31Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          4m44s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          4m44s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          4m29s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          4m29s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          6m6s    10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          6m21s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          4m29s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          4m29s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:12:46Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          4m59s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          4m59s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          4m44s   10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          4m44s   10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          6m21s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          6m36s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          4m44s   10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          4m44s   10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+
+2026-05-21T17:13:02Z
+NAME                      READY   STATUS    RESTARTS   AGE     IP           NODE                  NOMINATED NODE   READINESS GATES
+backend-6ddfb9c4d-79rf2   1/1     Running   0          5m15s   10.42.0.31   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-chzvt   1/1     Running   0          5m15s   10.42.0.32   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-kqsx4   1/1     Running   0          5m      10.42.0.34   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-qstws   1/1     Running   0          5m      10.42.0.36   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-smpdj   1/1     Running   0          6m37s   10.42.0.29   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-tnpl2   1/1     Running   0          6m52s   10.42.0.26   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-z5p2h   1/1     Running   0          5m      10.42.0.33   dsaa4040-k3s-server   <none>           <none>
+backend-6ddfb9c4d-zf89p   1/1     Running   0          5m      10.42.0.35   dsaa4040-k3s-server   <none>           <none>
+

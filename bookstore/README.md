@@ -14,7 +14,7 @@ This repository contains an engineering-track E1 implementation: a small online 
 | Cache | Redis 7 | Implemented |
 | Local run | Docker Compose | Verified |
 | Kubernetes run | K3s + Traefik | Verified |
-| Scaling | HPA for frontend and backend | Configured and metrics verified |
+| Scaling | HPA for frontend and backend | Verified with controlled CPU load |
 
 Core user workflow:
 
@@ -73,23 +73,13 @@ The final validation used a single-node K3s cluster with Traefik enabled. Miniku
 
 ```bash
 cd bookstore
-docker build -t bookstore-backend:latest ./backend
-docker build -t bookstore-frontend:latest ./frontend
 
-kubectl apply -f k8s/namespace.yaml
-kubectl apply -f k8s/configmap.yaml
-kubectl apply -f k8s/secret.yaml
-kubectl apply -f k8s/postgres-pvc.yaml
-kubectl apply -f k8s/postgres-deployment.yaml
-kubectl apply -f k8s/redis-deployment.yaml
-kubectl wait --for=condition=ready pod -l app=postgres -n bookstore --timeout=180s
-kubectl wait --for=condition=ready pod -l app=redis -n bookstore --timeout=120s
+# Auto-detect Minikube, K3s-in-Docker, or a generic kubectl cluster.
+./deploy.sh
 
-kubectl apply -f k8s/backend-deployment.yaml
-kubectl apply -f k8s/frontend-deployment.yaml
-kubectl apply -f k8s/ingress.yaml
-kubectl apply -f k8s/hpa.yaml
-kubectl get all,ingress,hpa -n bookstore -o wide
+# Explicit options used during final verification:
+TARGET=k3s-docker ./deploy.sh
+TARGET=minikube ./deploy.sh
 ```
 
 Verified K3s endpoints from the final run:
@@ -107,9 +97,14 @@ Evidence is kept under `deliverables/evidence/`.
 | K8s API end-to-end flow | `deliverables/evidence/k8s/k8s_api_e2e_corrected.txt` |
 | K8s objects, Ingress, HPA | `deliverables/evidence/k8s/bookstore_all_ingress_hpa.txt` |
 | HPA metrics resolved | `deliverables/evidence/k8s/bookstore_hpa.txt` |
+| HPA load test: 2 -> 8 backend replicas | `deliverables/evidence/hpa/hpa_result_summary.md` |
+| K3s runtime after HPA test | `deliverables/evidence/k8s/bookstore_runtime_after_hpa.txt` |
 | Pod recovery and PVC persistence | `deliverables/evidence/k8s/k8s_recovery_persistence_final.txt` |
+| Smoke test and PostgreSQL order query | `deliverables/evidence/k8s/smoke_test_k8s_nodeport.txt`, `deliverables/evidence/k8s/postgres_orders_after_smoke.txt` |
+| Redis cache keys and TTL | `deliverables/evidence/k8s/redis_cache_evidence.txt` |
 | Clean UI screenshots | `deliverables/evidence/screenshots/` |
-| Demo video | `deliverables/video/final_demo.mp4` |
+| Final demo video with burned-in subtitles | `deliverables/video/DSAA4040_E1_bookstore_demo_subtitled.mp4` |
+| Short evidence-cut video | `deliverables/video/final_demo.mp4` |
 
 Validation summary:
 
@@ -117,15 +112,32 @@ Validation summary:
 - K3s node and system Pods were ready.
 - Frontend and backend both ran with 2 replicas.
 - Traefik Ingress routed `/api` to `backend-service:8000`.
-- HPA reported CPU targets from metrics-server.
+- metrics-server was running and HPA reported live CPU targets.
+- Controlled HPA load test scaled backend replicas from 2 to 8 under CPU pressure.
+- Redis cache was verified with `catalog:*` keys after catalog API requests.
 - Deleting frontend/backend Pods recovered through Deployments.
 - Restarting PostgreSQL preserved order data through PVC.
+
+## Experiment Scripts
+
+```bash
+cd bookstore
+
+# End-to-end API workflow through the Kubernetes entrypoint.
+BASE_URL=http://localhost:30080 ./scripts/smoke_test.sh
+
+# HPA experiment. The final run used K3s-in-Docker:
+KUBECTL='docker exec dsaa4040-k3s-server kubectl' \
+  DURATION_SECONDS=240 WORKERS=14 ITERATIONS=6000000 \
+  OUT_DIR=../deliverables/evidence/hpa \
+  ./scripts/hpa_load_test.sh
+```
 
 ## Known Limitations
 
 - PostgreSQL is a single Pod with local persistent storage. It survives Pod restart, but it is not a highly available database setup.
 - PostgreSQL restart caused a short transient API failure before recovery; this is documented in the recovery evidence.
-- HPA is configured and receives metrics, but the repository does not include a long sustained load-test report.
+- HPA load testing uses a diagnostics CPU endpoint to create controlled autoscaling pressure; it is not real user browsing traffic.
 - Secrets are Kubernetes `Secret` objects for course demonstration, not integrated with an external secret manager.
 
 ## Main Files
@@ -135,14 +147,16 @@ bookstore/
   backend/                 FastAPI application and Dockerfile
   frontend/                Vue SPA, Nginx config, Dockerfile
   k8s/                     Kubernetes manifests
+  scripts/                 Smoke test and HPA load-test scripts
   docker-compose.yaml      Local four-service deployment
-  deploy.sh                Basic Kubernetes deployment script
+  deploy.sh                Minikube/K3s/Kubectl deployment script
 
 deliverables/
   evidence/                Command outputs and UI screenshots
-  video/final_demo.mp4     Edited demo walkthrough
+  video/DSAA4040_E1_bookstore_demo_subtitled.mp4 final demo video
+  video/final_demo.mp4 short evidence-cut video
 ```
 
-## AI Usage Disclosure
+## Tool Usage Disclosure
 
-AI tools were used for debugging, Kubernetes troubleshooting, documentation polishing, and generating local report/video artifacts. The submitted implementation and evidence were verified against the local Docker/K3s environment.
+Tools were used to assist debugging and documentation polishing. The system design, implementation choices, Kubernetes validation, experiments, and final verification were completed and reviewed by the team.

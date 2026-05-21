@@ -285,6 +285,23 @@ def list_categories(db: Session = Depends(get_db)):
     return categories
 
 
+@app.get("/api/diagnostics/cpu")
+def diagnostics_cpu(iterations: int = 2_000_000):
+    """CPU-bound endpoint used only for HPA/autoscaling demonstrations."""
+    bounded_iterations = min(max(iterations, 10_000), 8_000_000)
+    started = time.perf_counter()
+    checksum = 0
+    for i in range(bounded_iterations):
+        checksum = (checksum + (i * i)) % 1_000_000_007
+    elapsed_ms = round((time.perf_counter() - started) * 1000, 2)
+    return {
+        "purpose": "hpa-load-test",
+        "iterations": bounded_iterations,
+        "duration_ms": elapsed_ms,
+        "checksum": checksum,
+    }
+
+
 @app.get("/api/cart")
 def get_cart(session_id: str = "default", db: Session = Depends(get_db)):
     items = db.query(CartItem).filter(CartItem.session_id == session_id).order_by(CartItem.id).all()

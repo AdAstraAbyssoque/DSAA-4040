@@ -1,44 +1,117 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-echo "=== Cloud Bookstore K8s Deployment ==="
+TARGET="${TARGET:-auto}"
+NAMESPACE="${NAMESPACE:-bookstore}"
+BACKEND_IMAGE="${BACKEND_IMAGE:-bookstore-backend:latest}"
+FRONTEND_IMAGE="${FRONTEND_IMAGE:-bookstore-frontend:latest}"
+K3S_CONTAINER="${K3S_CONTAINER:-dsaa4040-k3s-server}"
 
-echo "[1/6] Building Docker images..."
-docker build -t bookstore-backend:latest ./backend
-docker build -t bookstore-frontend:latest ./frontend
+if [ "${TARGET}" = "auto" ]; then
+  if command -v minikube >/dev/null 2>&1; then
+    TARGET="minikube"
+  elif docker ps --format '{{.Names}}' | grep -qx "${K3S_CONTAINER}"; then
+    TARGET="k3s-docker"
+  else
+    TARGET="kubectl"
+  fi
+fi
 
-echo "[2/6] Creating namespace and configs..."
-kubectl apply -f k8s/namespace.yaml
-kubectl apply -f k8s/configmap.yaml
-kubectl apply -f k8s/secret.yaml
+case "${TARGET}" in
+  minikube)
+    KUBECTL=(kubectl)
+    ;;
+  k3s-docker)
+    KUBECTL=(docker exec "${K3S_CONTAINER}" kubectl)
+    ;;
+  kubectl)
+    KUBECTL=(kubectl)
+    ;;
+  *)
+    echo "Unknown TARGET=${TARGET}. Use auto, minikube, k3s-docker, or kubectl." >&2
+    exit 2
+    ;;
+esac
 
-echo "[3/6] Creating persistent storage..."
-kubectl apply -f k8s/postgres-pvc.yaml
+run_kubectl() {
+  "${KUBECTL[@]}" "$@"
+}
 
-echo "[4/6] Deploying PostgreSQL and Redis..."
-kubectl apply -f k8s/postgres-deployment.yaml
-kubectl apply -f k8s/redis-deployment.yaml
-echo "  Waiting for PostgreSQL to be ready..."
-kubectl wait --for=condition=ready pod -l app=postgres -n bookstore --timeout=120s
-echo "  Waiting for Redis to be ready..."
-kubectl wait --for=condition=ready pod -l app=redis -n bookstore --timeout=120s
+apply_file() {
+  if [ "${TARGET}" = "k3s-docker" ]; then
+    docker exec -i "${K3S_CONTAINER}" kubectl apply -f - < "$1"
+  else
+    run_kubectl apply -f "$1"
+  fi
+}
 
-echo "[5/6] Deploying backend and frontend..."
-kubectl apply -f k8s/backend-deployment.yaml
-kubectl apply -f k8s/frontend-deployment.yaml
-echo "  Waiting for backend pods..."
-kubectl wait --for=condition=ready pod -l app=backend -n bookstore --timeout=120s
-echo "  Waiting for frontend pods..."
-kubectl wait --for=condition=ready pod -l app=frontend -n bookstore --timeout=120s
+echo "=== Cloud Bookstore Kubernetes Deployment ==="
+echo "Target: ${TARGET}"
 
-echo "[6/6] Applying Ingress and HPA..."
-kubectl apply -f k8s/ingress.yaml
-kubectl apply -f k8s/hpa.yaml
+if [ "${TARGET}" = "minikube" ]; then
+  echo "[0/7] Starting Minikube and enabling addons..."
+  minikube status >/dev/null 2>&1 || minikube start
+  minikube addons enable ingress
+  minikube addons enable metrics-server
+fi
+
+echo "[1/7] Building Docker images..."
+docker build -t "${BACKEND_IMAGE}" ./backend
+docker build -t "${FRONTEND_IMAGE}" ./frontend
+
+echo "[2/7] Loading images into the Kubernetes runtime..."
+case "${TARGET}" in
+  minikube)
+    minikube image load "${BACKEND_IMAGE}"
+    minikube image load "${FRONTEND_IMAGE}"
+    ;;
+  k3s-docker)
+    docker save "${BACKEND_IMAGE}" "${FRONTEND_IMAGE}" | docker exec -i "${K3S_CONTAINER}" ctr images import -
+    ;;
+  kubectl)
+    echo "Skipping image load for generic kubectl target. Ensure images are available to the cluster."
+    ;;
+esac
+
+echo "[3/7] Creating namespace and configuration..."
+apply_file k8s/namespace.yaml
+apply_file k8s/configmap.yaml
+apply_file k8s/secret.yaml
+
+echo "[4/7] Creating persistent storage..."
+apply_file k8s/postgres-pvc.yaml
+
+echo "[5/7] Deploying PostgreSQL and Redis..."
+apply_file k8s/postgres-deployment.yaml
+apply_file k8s/redis-deployment.yaml
+run_kubectl wait --for=condition=ready pod -l app=postgres -n "${NAMESPACE}" --timeout=180s
+run_kubectl wait --for=condition=ready pod -l app=redis -n "${NAMESPACE}" --timeout=120s
+
+echo "[6/7] Deploying backend and frontend..."
+apply_file k8s/backend-deployment.yaml
+apply_file k8s/frontend-deployment.yaml
+run_kubectl rollout restart deployment/backend -n "${NAMESPACE}"
+run_kubectl rollout restart deployment/frontend -n "${NAMESPACE}"
+run_kubectl rollout status deployment/backend -n "${NAMESPACE}" --timeout=180s
+run_kubectl rollout status deployment/frontend -n "${NAMESPACE}" --timeout=180s
+
+echo "[7/7] Applying Ingress and HPA..."
+apply_file k8s/ingress.yaml
+apply_file k8s/hpa.yaml
+run_kubectl get pods -n "${NAMESPACE}" -o wide
+run_kubectl get svc -n "${NAMESPACE}"
+run_kubectl get ingress -n "${NAMESPACE}"
+run_kubectl get hpa -n "${NAMESPACE}"
 
 echo ""
 echo "=== Deployment Complete ==="
-echo ""
-kubectl get all -n bookstore
-echo ""
-FRONTEND_PORT=$(kubectl get svc frontend-service -n bookstore -o jsonpath='{.spec.ports[0].nodePort}')
-echo "Access the bookstore at: http://localhost:${FRONTEND_PORT}"
+if [ "${TARGET}" = "minikube" ]; then
+  NODE_IP="$(minikube ip)"
+  echo "NodePort: http://${NODE_IP}:30080"
+  echo "Ingress:  http://bookstore.local/ after adding '${NODE_IP} bookstore.local' to /etc/hosts"
+elif [ "${TARGET}" = "k3s-docker" ]; then
+  echo "NodePort: http://localhost:30080"
+  echo "Ingress:  http://localhost:18081"
+else
+  echo "NodePort: http://<node-ip>:30080"
+fi
